@@ -1,15 +1,14 @@
-
-
-
+'''
 N = int(input())
 
 graph = { i : [] for i in range(1, N+1)}
+
 
 for _ in range(N-1):
     i, j = map(int, input().split())
     graph[i].append(j)
     graph[j].append(i)
-
+print(graph)
 parent = [0]*(N+1)
 stack = []
 
@@ -36,7 +35,7 @@ print(parent)
 # 제출 코드
 import sys
 
-sys.setrecursionlimit(100000)
+sys.setrecursionlimit(10**6)
 
 N = int(input())
 
@@ -50,20 +49,19 @@ for _ in range(N-1):
 parent = [0]*(N+1)
 stack = []
 visited = [False]*(N+1)
+array = []
 
 def dfs(i):
-    global parent, stack
+    global parent
     stack.append(i)
     visited[i] = True
     for j in graph[i]:
         if not visited[j]:
             dfs(j)
-            parent[stack[-1]] = stack[-2]
-            stack.pop()
-
+            array.append((stack.pop(), stack[-1]))
+            # parent[stack[-1]] = stack[-2]
 dfs(1)
+array.sort()
 
-answer = parent[2:]
 for i in range(N-1):
-    print(answer[i])
-'''
+    print(array[i][1])
