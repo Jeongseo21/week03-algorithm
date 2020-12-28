@@ -1,3 +1,4 @@
+'''
 import numpy as np
 from collections import deque
 # 가로 M, 세로 N
@@ -101,7 +102,7 @@ def bfs(M, N, box):
 
 answer = bfs(M, N, box)
 print(answer)
-'''
+
 
 
 
