@@ -1,4 +1,4 @@
-'''
+
 N = int(input())
 
 graph = { i : [] for i in range(1, N+1)}
@@ -65,3 +65,4 @@ array.sort()
 
 for i in range(N-1):
     print(array[i][1])
+'''
