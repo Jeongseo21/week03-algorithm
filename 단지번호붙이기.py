@@ -68,7 +68,7 @@ dx = [0, 0, -1, 1]
 answer = []
 
 def bfs(y, x, cnt):
-    count = 0
+    count = 0 # 단지 안의 집 수
     dq = deque()
     dq.append((y, x))
     visited[y][x] = 1
